@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="carpool_action" model="ir.actions.act_window"> 
+        <field name="name">Find Carpool</field> 
+        <field name="res_model">carpooling.carpooling</field>
+        <field name="view_mode">tree, form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create new carpooling record.
+            </p>
+        </field>
+    </record>
+</odoo>

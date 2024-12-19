@@ -12,6 +12,7 @@
     'category': 'Custom Tools',
     'license': 'LGPL-3',
     'data': [
+        'views/carpooling_views.xml',
         'views/carpooling_menus.xml',
         'security/ir.model.access.csv',
     ]
