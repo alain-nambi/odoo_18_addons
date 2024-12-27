@@ -1,47 +1,53 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
+    <!-- ROOT MENU: Carpooling -->
     <menuitem 
         id="root_menu" 
         name="Carpooling" 
         web_icon="carpooling,static/description/icon.png"
     />
 
+    <!-- MAIN MENU: Carpools and Poolers -->
     <menuitem
         id="carpooling_menu"
         name="Carpools and Poolers"
-        parent="carpooling.root_menu"
+        parent="root_menu"
         action="carpool_action"
         sequence="8"
     />
 
+    <!-- SUB MENU: Find a Carpool -->
     <menuitem
         id="carpooling_menu_find_carpool"
         name="Find a Carpool"
-        parent="carpooling.carpooling_menu"
+        parent="carpooling_menu"
         action="carpool_action"
         sequence="10"
     />
 
+    <!-- MENU: Carpool Request -->
     <menuitem
         id="carpooling_menu_request" 
         name="Carpool Request"
-        parent="carpooling.root_menu"
+        parent="root_menu"
         action="carpool_action"
         sequence="9"
     />
 
+    <!-- MENU: Journeys -->
     <menuitem
         id="carpooling_menu_journeys"
         name="Journeys"
-        parent="carpooling.root_menu"
+        parent="root_menu"
         action="carpool_action"
         sequence="11"
     />
 
+    <!-- MENU: Addresses -->
     <menuitem
         id="carpooling_menu_addresses"
         name="Addresses"
-        parent="carpooling.root_menu"
+        parent="root_menu"
         action="carpool_action"
         sequence="10"
     />
