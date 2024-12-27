@@ -1,25 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="carpooling_form_view" model="ir.ui.view">
-        <field name="name">carpooling.carpooling.form</field>
-        <field name="model">carpooling.carpooling</field>
+    <!-- Carpooling form view definition -->
+    <record id="carpooling_view_form" model="ir.ui.view">
+        <field name="name">carpooling.view.form</field> <!-- View name -->
+        <field name="model">carpooling.carpooling</field> <!-- Associated model -->
         <field name="arch" type="xml">
-            <form string="Carpooling">
-                <group>
-                    <field name="name"/>
-                    <field name="taken_seats"/>
+            <form string="Carpooling"> <!-- Form title -->
+                <group> <!-- Group for main fields -->
+                    <field name="name"/> <!-- Carpool name -->
+                    <field name="taken_seats"/> <!-- Number of taken seats -->
                 </group>
-                <notebook>
-                    <page name="details" string="Details">
+                <notebook> <!-- Tabs for additional information -->
+                    <page name="details" string="Details"> <!-- Details tab -->
                         <group>
-                            <field name="departure_time"/>
-                            <field name="departure_date" />
+                            <field name="departure_time"/> <!-- Departure time -->
+                            <field name="departure_date"/> <!-- Departure date -->
                         </group>
                     </page>
 
-                    <page name="other_informations" string="Other informations">
+                    <page name="other_informations" string="Other informations"> <!-- Additional info tab -->
                         <group>
-                            <field name="note"/>    
+                            <field name="note"/> <!-- Notes field -->
                         </group>
                     </page>
                 </notebook>
@@ -27,13 +28,28 @@
         </field>
     </record>
 
+    <!--- Carpooling tree view definition -->
+    <record id="carpooling_view_tree" model="ir.ui.view">
+        <field name="name">carpooling.view.tree</field> <!-- View name -->
+        <field name="model">carpooling.carpooling</field> <!-- Associated model -->
+        <field name="arch" type="xml"> 
+            <tree> <!-- Tree view definition -->
+                <field name="name" /> <!-- Carpool name -->
+                <field name="taken_seats" /> <!-- Number of taken seats -->
+                <field name="departure_date" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to open carpooling records -->
     <record id="carpool_action" model="ir.actions.act_window"> 
-        <field name="name">Find Carpool</field> 
-        <field name="res_model">carpooling.carpooling</field>
-        <field name="view_mode">tree,form</field>
+        <field name="name">Find Carpool</field> <!-- Action name -->
+        <field name="res_model">carpooling.carpooling</field> <!-- Target model -->
+        <field name="view_mode">tree,form</field> <!-- Available views -->
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
-                Create new carpooling record.
+                Create new carpooling record. <!-- Help text -->
             </p>
         </field>
     </record>
