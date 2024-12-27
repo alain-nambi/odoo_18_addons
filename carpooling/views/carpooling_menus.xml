@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <menuitem id="root_menu" name="Carpooling" />
+    <menuitem 
+        id="root_menu" 
+        name="Carpooling" 
+        web_icon="carpooling,static/description/icon.png"
+    />
 
     <menuitem
         id="carpooling_menu"
