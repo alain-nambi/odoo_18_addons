@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <!-- Carpooling form view definition -->
+    <!-- FORM VIEW | Carpooling form view definition -->
     <record id="carpooling_view_form" model="ir.ui.view">
         <field name="name">carpooling.view.form</field> <!-- View name -->
         <field name="model">carpooling.carpooling</field> <!-- Associated model -->
@@ -28,7 +28,7 @@
         </field>
     </record>
 
-    <!--- Carpooling tree view definition -->
+    <!--- TREE VIEW | Carpooling tree view definition -->
     <record id="carpooling_view_tree" model="ir.ui.view">
         <field name="name">carpooling.view.tree</field> <!-- View name -->
         <field name="model">carpooling.carpooling</field> <!-- Associated model -->
@@ -42,11 +42,47 @@
         </field>
     </record>
 
+    <!-- KANBAN VIEW | Carpooling kanban view definition for carpooling.carpooling model -->
+    <record id="carpooling_view_kanban" model="ir.ui.view">
+        <field name="name">carpooling.view.kanban</field> <!-- View name -->
+        <field name="model">carpooling.carpooling</field> <!-- Associated model -->
+        <field name="arch" type="xml">
+            <kanban> <!-- Kanban view structure -->
+                <templates>
+                    <t t-name="kanban-box"> <!-- Template for each Kanban card -->
+                        <div class="oe_kanban_global_click">
+                            <!-- Makes the entire card clickable for navigation -->
+                            <div class="oe_kanban_card">
+                                <!-- Defines the structure and style of the Kanban card -->
+                                <div class="oe_kanban_record_title">
+                                    <strong>
+                                        <field name="name"/> <!-- Display the record name -->
+                                    </strong>
+                                </div>
+                                <div class="oe_kanban_footer">
+                                    <span class="badge badge-info">
+                                        <field name="departure_date"/> <!-- Departure date -->
+                                    </span>
+                                    <span class="badge badge-info">
+                                        <field name="taken_seats"/> seats taken <!-- Seats taken -->
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+
+
     <!-- Action to open carpooling records -->
     <record id="carpool_action" model="ir.actions.act_window"> 
         <field name="name">Find Carpool</field> <!-- Action name -->
         <field name="res_model">carpooling.carpooling</field> <!-- Target model -->
-        <field name="view_mode">tree,form</field> <!-- Available views -->
+        <field name="view_mode">tree,form,kanban</field> <!-- Available views, use : tree, form, kanban -->
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Create new carpooling record. <!-- Help text -->
