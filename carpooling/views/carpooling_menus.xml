@@ -11,6 +11,38 @@
         name="Carpools and Poolers"
         parent="carpooling.root_menu"
         action="carpool_action"
+        sequence="8"
+    />
+
+    <menuitem
+        id="carpooling_menu_find_carpool"
+        name="Find a Carpool"
+        parent="carpooling.carpooling_menu"
+        action="carpool_action"
+        sequence="10"
+    />
+
+    <menuitem
+        id="carpooling_menu_request" 
+        name="Carpool Request"
+        parent="carpooling.root_menu"
+        action="carpool_action"
+        sequence="9"
+    />
+
+    <menuitem
+        id="carpooling_menu_journeys"
+        name="Journeys"
+        parent="carpooling.root_menu"
+        action="carpool_action"
+        sequence="11"
+    />
+
+    <menuitem
+        id="carpooling_menu_addresses"
+        name="Addresses"
+        parent="carpooling.root_menu"
+        action="carpool_action"
         sequence="10"
     />
 </odoo>
