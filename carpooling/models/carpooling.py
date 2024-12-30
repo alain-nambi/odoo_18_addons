@@ -44,9 +44,15 @@ class Carpooling(models.Model):
     image = fields.Binary(string='Image')
     car_id = fields.Many2one('car.car', string='Car')
     tag_ids = fields.Many2many('carpooling.tag', string='Tags')
+    km = fields.Float(string='KM')
+    cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost')
     
     def _compute_company_currency(self):
         for record in self:
             # logging.info("Company currency: %s", self.env.user.company_id.currency_id)
             record.company_currency = self.env.user.company_id.currency_id
+            
+    def _compute_cost(self):
+        for record in self:
+            record.cost = record.km * record.amount_per_km
     

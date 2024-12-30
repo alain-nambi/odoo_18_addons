@@ -11,6 +11,8 @@
                     <field name="taken_seats" /> <!-- Number of taken seats -->
                     <field name="company_currency" invisible="1" />
                     <field name="amount_per_km" options="{'currency_field': 'company_currency'}" />
+                    <field name="km" />
+                    <field name="cost" />
                     <field name="image" widget="image" />
                     <field name="car_id" />
                     <field name="tag_ids" widget="many2many_tags" />
