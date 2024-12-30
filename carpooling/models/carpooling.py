@@ -42,6 +42,8 @@ class Carpooling(models.Model):
     )
     resume = fields.Html(string='Resume')
     image = fields.Binary(string='Image')
+    car_id = fields.Many2one('car.car', string='Car')
+    tag_ids = fields.Many2many('carpooling.tag', string='Tags')
     
     def _compute_company_currency(self):
         for record in self:
