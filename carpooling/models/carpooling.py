@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
+import logging
 
 class Carpooling(models.Model):
     """
@@ -33,4 +34,16 @@ class Carpooling(models.Model):
         ('full', 'Full'),
     ]
     state = fields.Selection(selection=states, string='State', default='new')
+    company_currency = fields.Many2one(
+        'res.currency', string='Currency', compute='_compute_company_currency', readonly=True
+    )
+    amount_per_km = fields.Monetary(
+        string='Amount per km', currency_field='company_currency'
+    )
+    resume = fields.Html(string='Resume')
+    
+    def _compute_company_currency(self):
+        for record in self:
+            # logging.info("Company currency: %s", self.env.user.company_id.currency_id)
+            record.company_currency = self.env.user.company_id.currency_id
     

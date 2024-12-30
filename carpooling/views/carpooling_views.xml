@@ -7,8 +7,10 @@
         <field name="arch" type="xml">
             <form string="Carpooling"> <!-- Form title -->
                 <group> <!-- Group for main fields -->
-                    <field name="name"/> <!-- Carpool name -->
-                    <field name="taken_seats"/> <!-- Number of taken seats -->
+                    <field name="name" /> <!-- Carpool name -->
+                    <field name="taken_seats" /> <!-- Number of taken seats -->
+                    <field name="company_currency" invisible="1" />
+                    <field name="amount_per_km" options="{'currency_field': 'company_currency'}" />
                 </group>
                 <notebook> <!-- Tabs for additional information -->
                     <page name="details" string="Details"> <!-- Details tab -->
@@ -20,7 +22,8 @@
 
                     <page name="other_informations" string="Other informations"> <!-- Additional info tab -->
                         <group>
-                            <field name="note"/> <!-- Notes field -->
+                            <field name="note" /> <!-- Notes field -->
+                            <field name="resume" />
                         </group>
                     </page>
                 </notebook>
