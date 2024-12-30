@@ -41,6 +41,7 @@ class Carpooling(models.Model):
         string='Amount per km', currency_field='company_currency'
     )
     resume = fields.Html(string='Resume')
+    image = fields.Binary(string='Image')
     
     def _compute_company_currency(self):
         for record in self:
