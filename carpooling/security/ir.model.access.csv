@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_carpooling_carpooling,access_carpooling_carpooling,model_carpooling_carpooling,base.group_user,1,1,1,1
-access_car_car,access_car_car,model_car_car,base.group_user,1,1,1,1
-access_carpooling_tag,access_carpooling_tag,model_carpooling_tag,base.group_user,1,1,1,1
