@@ -46,6 +46,7 @@ class Carpooling(models.Model):
     tag_ids = fields.Many2many('carpooling.tag', string='Tags')
     km = fields.Float(string='KM')
     cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost')
+    brand = fields.Char(string='Brand', related='car_id.brand')
     
     def _compute_company_currency(self):
         for record in self:

@@ -16,6 +16,7 @@
                     <field name="image" widget="image" />
                     <field name="car_id" />
                     <field name="tag_ids" widget="many2many_tags" />
+                    <field name="brand" />
                 </group>
                 <notebook> <!-- Tabs for additional information -->
                     <page name="details" string="Details"> <!-- Details tab -->
@@ -58,7 +59,7 @@
         <field name="arch" type="xml">
             <kanban> <!-- Kanban view structure -->
                 <templates>
-                    <t t-name="kanban-box"> <!-- Template for each Kanban card -->
+                    <t t-name="card"> <!-- Template for each Kanban card -->
                         <div class="oe_kanban_global_click">
                             <!-- Makes the entire card clickable for navigation -->
                             <div class="oe_kanban_card">
