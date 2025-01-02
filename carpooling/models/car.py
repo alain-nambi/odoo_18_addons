@@ -15,3 +15,4 @@ class Car(models.Model):
     name = fields.Char(string='Name')
     carpooling_ids = fields.One2many('carpooling.carpooling', 'car_id', string='Carpooling Trips')
     brand = fields.Char(string='Brand')
+    seats = fields.Integer(string='Seats')
