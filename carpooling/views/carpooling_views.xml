@@ -63,27 +63,42 @@
         <field name="model">carpooling.carpooling</field> <!-- Associated model -->
         <field name="arch" type="xml">
             <kanban> <!-- Kanban view structure -->
+                <!-- Templates define the visual structure of kanban cards -->
                 <templates>
-                    <t t-name="card" class="flex-row">
-                        <aside class="o_kanban_aside_full">
-                            <div class="o_kanban_image_fill w-100">
+                    <!-- Main card template with flex-row layout -->
+                    <t t-name="card" class="flex-row gap-2">
+                        <!-- Left side containing the image -->
+                        <aside class="o_kanban_aside-fill">
+                            <div>
+                                <!-- Image field with zoom and fit options -->
                                 <field 
                                     name="image" 
                                     widget="image" 
                                     class="o_kanban_image" 
-                                    options="{'zoom': 1, 'img_class': 'object-fit-contain w-100'}"
+                                    options="{'zoom': 1, 'img_class': 'object-fit-cover w-100'}"
                                 />
                             </div>
                         </aside>
+                        <!-- Main content area -->
                         <main class="ps-2 ps-md-0">
+                            <!-- Header with car and date information -->
                             <div class="d-flex justify-content-between align-items-center">
-                                <field name="car_id" class="mb-0 fw-bold fs-5" />
-                                <field name="departure_date" class="text" />
+                                <field name="car_id" class="mb-0 fw-bold fs-5" /> <!-- Car model in bold -->
+                                <field name="departure_date" class="text" /> <!-- Departure date -->
                             </div>
 
-                            <field name="company_currency" invisible="1" />
-                            <field name="cost" class="text-muted" />
-                            <field name="state" />
+                            <!-- Cost information -->
+                            <field name="company_currency" invisible="1" /> <!-- Hidden currency field -->
+                            <field name="cost" class="text-muted" /> <!-- Cost display -->
+
+                            <!-- Status and seat information -->
+                            <div>
+                                <span class="badge text-bg-primary">
+                                    <field name="state"/>
+                                </span>
+                                (<field name="taken_seats"/> / <field name="seats"/> seats taken)
+                            </div>
+
                         </main>
                     </t>
                 </templates>

@@ -57,6 +57,7 @@ class Carpooling(models.Model):
     km = fields.Float(string='KM')
     cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost')
     brand = fields.Char(string='Brand', related='car_id.brand')
+    seats = fields.Integer(string='Seats', related='car_id.seats')
     
     @api.onchange('taken_seats', 'state')
     def _onchange_taken_seats(self):
