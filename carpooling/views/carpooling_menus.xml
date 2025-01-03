@@ -21,7 +21,7 @@
         id="carpooling_menu_find_carpool"
         name="Find a Carpool"
         parent="carpooling_menu"
-        action="carpool_action"
+        action="find_carpool_action"
         sequence="10"
     />
 

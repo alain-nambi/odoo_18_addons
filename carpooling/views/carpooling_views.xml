@@ -24,6 +24,8 @@
                         <group>
                             <field name="departure_time"/> <!-- Departure time -->
                             <field name="departure_date"/> <!-- Departure date -->
+                            <field name="departure_city" />
+                            <field name="destination_city" />
                         </group>
                     </page>
 
