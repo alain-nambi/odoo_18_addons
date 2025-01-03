@@ -45,10 +45,14 @@
         <field name="model">carpooling.carpooling</field> <!-- Associated model -->
         <field name="arch" type="xml">
             <list string="Carpooling"> <!-- Tree view definition -->
+                <field name="car_id" />
                 <field name="name" /> <!-- Carpool name -->
-                <field name="taken_seats" /> <!-- Number of taken seats -->
+                <field name="taken_seats" width="100" /> <!-- Number of taken seats -->
                 <field name="departure_date" /> <!-- Departure date -->
                 <field name="state" /> <!-- State -->
+                <field name="company_currency" invisible="1" />
+                <field name="cost" />
+                <field name="tag_ids" widget="many2many_tags" />
             </list>
         </field>
     </record>
@@ -60,26 +64,27 @@
         <field name="arch" type="xml">
             <kanban> <!-- Kanban view structure -->
                 <templates>
-                    <t t-name="card"> <!-- Template for each Kanban card -->
-                        <div class="oe_kanban_global_click">
-                            <!-- Makes the entire card clickable for navigation -->
-                            <div class="oe_kanban_card">
-                                <!-- Defines the structure and style of the Kanban card -->
-                                <div class="oe_kanban_record_title">
-                                    <strong>
-                                        <field name="name"/> <!-- Display the record name -->
-                                    </strong>
-                                </div>
-                                <div class="oe_kanban_footer">
-                                    <span class="badge badge-info">
-                                        <field name="departure_date"/> <!-- Departure date -->
-                                    </span>
-                                    <span class="badge badge-info">
-                                        <field name="taken_seats"/> seats taken <!-- Seats taken -->
-                                    </span>
-                                </div>
+                    <t t-name="card" class="flex-row">
+                        <aside class="o_kanban_aside_full">
+                            <div class="o_kanban_image_fill w-100">
+                                <field 
+                                    name="image" 
+                                    widget="image" 
+                                    class="o_kanban_image" 
+                                    options="{'zoom': 1, 'img_class': 'object-fit-contain w-100'}"
+                                />
                             </div>
-                        </div>
+                        </aside>
+                        <main class="ps-2 ps-md-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <field name="car_id" class="mb-0 fw-bold fs-5" />
+                                <field name="departure_date" class="text" />
+                            </div>
+
+                            <field name="company_currency" invisible="1" />
+                            <field name="cost" class="text-muted" />
+                            <field name="state" />
+                        </main>
                     </t>
                 </templates>
             </kanban>
