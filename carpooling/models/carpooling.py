@@ -31,32 +31,33 @@ class Carpooling(models.Model):
     """
     _name = 'carpooling.carpooling'
     _description = """Helps you to find a carpooling partner"""
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char(string='Name')
-    taken_seats = fields.Integer(string='Taken Seats')
-    departure_time = fields.Float(string='Departure Time')
-    departure_date = fields.Date(string='Departure Date')
-    departure_city = fields.Char(string='Departure City')
-    destination_city = fields.Char(string='Destination City')
-    note = fields.Text(string='Note')
-    is_free = fields.Boolean(string='Is Free')
+    taken_seats = fields.Integer(string='Taken Seats', tracking=True)
+    departure_time = fields.Float(string='Departure Time', tracking=True)
+    departure_date = fields.Date(string='Departure Date', tracking=True)
+    departure_city = fields.Char(string='Departure City', tracking=True)
+    destination_city = fields.Char(string='Destination City', tracking=True)
+    note = fields.Text(string='Note', tracking=True)
+    is_free = fields.Boolean(string='Is Free', tracking=True)
     states = [
         ('new', 'New'),
         ('available', 'Available'),
         ('full', 'Full'),
     ]
-    state = fields.Selection(selection=states, string='State', default='new')
+    state = fields.Selection(selection=states, string='State', default='new', tracking=True)
     company_currency = fields.Many2one(
         'res.currency', string='Currency', compute='_compute_company_currency', readonly=True
     )
     amount_per_km = fields.Monetary(
-        string='Amount per km', currency_field='company_currency'
+        string='Amount per km', currency_field='company_currency', tracking=True
     )
-    resume = fields.Html(string='Resume')
-    image = fields.Binary(string='Image')
-    car_id = fields.Many2one('carpooling.car', string='Car')
-    tag_ids = fields.Many2many('carpooling.tag', string='Tags')
+    
+    resume = fields.Html(string='Resume', tracking=True)
+    image = fields.Binary(string='Image', tracking=True)
+    car_id = fields.Many2one('carpooling.car', string='Car', tracking=True)
+    tag_ids = fields.Many2many('carpooling.tag', string='Tags', tracking=True)
     km = fields.Float(string='KM')
     cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost')
     brand = fields.Char(string='Brand', related='car_id.brand')
