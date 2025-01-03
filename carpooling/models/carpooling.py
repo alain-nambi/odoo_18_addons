@@ -86,8 +86,8 @@ class Carpooling(models.Model):
             ValidationError: If 'km' is negative or if 'taken_seats' exceeds the car's available seats.
         """
         for record in self:
-            if record.km < 0:
-                raise ValidationError(f'Negative KM value: {record.km} is not allowed.')
+            if record.km <= 0:
+                raise ValidationError(f'Negative or Zero KM value: {record.km} is not allowed.')
             if record.taken_seats > record.car_id.seats:
                 raise ValidationError(f'Taken seats {record.taken_seats} exceed available seats {record.car_id.seats}.')
 
