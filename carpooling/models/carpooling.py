@@ -31,6 +31,7 @@ class Carpooling(models.Model):
     """
     _name = 'carpooling.carpooling'
     _description = """Helps you to find a carpooling partner"""
+    _inherit = ['mail.thread']
     
     name = fields.Char(string='Name')
     taken_seats = fields.Integer(string='Taken Seats')

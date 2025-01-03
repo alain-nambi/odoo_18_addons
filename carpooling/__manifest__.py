@@ -8,7 +8,7 @@
     """
         Helps you to find a carpooling partner
     """,
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'category': 'Custom Tools',
     'license': 'LGPL-3',
     'data': [

@@ -6,39 +6,42 @@
         <field name="model">carpooling.carpooling</field> <!-- Associated model -->
         <field name="arch" type="xml">
             <form string="Carpooling"> <!-- Form title -->
-                <group> <!-- Group for main fields -->
-                    <field name="name" /> <!-- Carpool name -->
-                    <field name="taken_seats" /> <!-- Number of taken seats -->
-                    <field name="state" invisible="1" /> <!-- State -->
-                    <field name="company_currency" invisible="1" />
-                    <field name="amount_per_km" options="{'currency_field': 'company_currency'}" />
-                    <field name="km" />
-                    <field name="cost" />
-                    <field name="image" widget="image" />
-                    <field name="car_id" />
-                    <field name="tag_ids" widget="many2many_tags" />
-                    <field name="brand" />
-                </group>
-                <notebook> <!-- Tabs for additional information -->
-                    <page name="details" string="Details"> <!-- Details tab -->
-                        <group>
-                            <field name="departure_time"/> <!-- Departure time -->
-                            <field name="departure_date"/> <!-- Departure date -->
-                            <field name="departure_city" />
-                            <field name="destination_city" />
-                        </group>
-                    </page>
+                <sheet>
+                    <group> <!-- Group for main fields -->
+                        <field name="name" /> <!-- Carpool name -->
+                        <field name="taken_seats" /> <!-- Number of taken seats -->
+                        <field name="state" invisible="1" /> <!-- State -->
+                        <field name="company_currency" invisible="1" />
+                        <field name="amount_per_km" options="{'currency_field': 'company_currency'}" />
+                        <field name="km" />
+                        <field name="cost" />
+                        <field name="image" widget="image" />
+                        <field name="car_id" />
+                        <field name="tag_ids" widget="many2many_tags" />
+                        <field name="brand" />
+                    </group>
+                    <notebook> <!-- Tabs for additional information -->
+                        <page name="details" string="Details"> <!-- Details tab -->
+                            <group>
+                                <field name="departure_time"/> <!-- Departure time -->
+                                <field name="departure_date"/> <!-- Departure date -->
+                                <field name="departure_city" />
+                                <field name="destination_city" />
+                            </group>
+                        </page>
 
-                    <page name="other_informations" string="Other informations"> <!-- Additional info tab -->
-                        <group>
-                            <field name="note" /> <!-- Notes field -->
-                            <field name="resume" />
-                        </group>
-                    </page>
-                </notebook>
+                        <page name="other_informations" string="Other informations"> <!-- Additional info tab -->
+                            <group>
+                                <field name="note" /> <!-- Notes field -->
+                                <field name="resume" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
             </form>
         </field>
-    </record>
+    </record> 
 
     <!-- TREE VIEW | Carpooling tree view definition -->
     <!-- In Odoo 18, the <tree> tag has been replaced by <list> tag -->
