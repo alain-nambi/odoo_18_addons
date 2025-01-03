@@ -75,8 +75,9 @@
                                     name="image" 
                                     widget="image" 
                                     class="o_kanban_image" 
-                                    options="{'zoom': 1, 'img_class': 'object-fit-cover w-100'}"
+                                    options="{'zoom': true, 'img_class': 'object-fit-cover w-100'}"
                                 />
+
                             </div>
                         </aside>
                         <!-- Main content area -->

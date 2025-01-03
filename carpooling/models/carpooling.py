@@ -59,7 +59,18 @@ class Carpooling(models.Model):
     brand = fields.Char(string='Brand', related='car_id.brand')
     seats = fields.Integer(string='Seats', related='car_id.seats')
     
-    @api.onchange('taken_seats', 'state')
+    @api.onchange('car_id')
+    def _onchange_car_id(self):
+        """
+        Triggered when the 'car_id' field is changed.
+        """
+        # Search for cars with more than 2 seats and sort by car name
+        cars = self.env['carpooling.car'].search([]).filtered(lambda car: car.seats >= 2).sorted(key=lambda car: car.name)
+        for car in cars:
+            logging.info('Car name: %s', car.name)
+
+    
+    @api.onchange('taken_seats')
     def _onchange_taken_seats(self):
         """
         Triggered when the 'taken_seats' field is changed.
