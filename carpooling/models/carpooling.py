@@ -74,7 +74,10 @@ class Carpooling(models.Model):
             logging.info('Car name: %s', car.name)
 
     
-    @api.onchange('taken_seats')
+    # Check if the carpooling trip is free
+    # By checking taken_seats and car_id fields
+    # Checking car_id is important because car seats must be updated
+    @api.onchange('taken_seats', 'car_id')
     def _onchange_taken_seats(self):
         """
         Triggered when the 'taken_seats' field is changed.
