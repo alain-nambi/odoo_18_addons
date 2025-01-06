@@ -58,10 +58,10 @@ class Carpooling(models.Model):
     image = fields.Binary(string='Image', tracking=True)
     car_id = fields.Many2one('carpooling.car', string='Car', tracking=True)
     tag_ids = fields.Many2many('carpooling.tag', string='Tags', tracking=True)
-    km = fields.Float(string='KM')
-    cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost')
-    brand = fields.Char(string='Brand', related='car_id.brand')
-    seats = fields.Integer(string='Seats', related='car_id.seats')
+    km = fields.Float(string='KM', tracking=True)
+    cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost', tracking=True)
+    brand = fields.Char(string='Brand', related='car_id.brand', tracking=True)
+    seats = fields.Integer(string='Seats', related='car_id.seats', tracking=True)
     
     @api.onchange('car_id')
     def _onchange_car_id(self):

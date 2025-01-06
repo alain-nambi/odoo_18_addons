@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- Form view definition for the carpooling wizard -->
     <record id="carpooling_wizard_view_form" model="ir.ui.view">
         <field name="name">carpooling.wizard.form</field>
         <field name="model">carpooling.wizard</field>
@@ -8,11 +9,13 @@
             <form string="Search a trip">
                 <sheet>
                     <group>
+                        <!-- Fields for the carpooling wizard form -->
                         <field name="departure" />
                         <field name="destination" />
                         <field name="departure_date" />
                     </group>
                     <footer>
+                        <!-- Buttons for the form -->
                         <button name="action_search_trip" string="Search" type="object" class="btn-primary"/>
                         <button string="Cancel" special="cancel" class="btn-secondary"/>
                     </footer>
@@ -21,16 +24,12 @@
         </field>
     </record>
 
+    <!-- Action definition to open the carpooling wizard form -->
     <record id="find_carpool_action" model="ir.actions.act_window">
         <field name="name">Find Carpool</field>
         <field name="res_model">carpooling.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                Create new carpooling record. <!-- Help text -->
-            </p>
-        </field>
     </record>
 
 </odoo>
