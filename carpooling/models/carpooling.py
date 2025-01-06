@@ -45,6 +45,10 @@ class Carpooling(models.Model):
     _description = """Helps you to find a carpooling partner"""
     _inherit = ['mail.thread', 'mail.activity.mixin', 'carpooling.abstract.model']
     
+    # This sets the default ordering for records: first by 'sequence' in ascending order, then by 'id' in descending order.
+    # For tree view
+    _order = 'sequence asc, id desc' #
+    
     name = fields.Char(string='Name')
     taken_seats = fields.Integer(string='Taken Seats', tracking=True)
     departure_time = fields.Float(string='Departure Time', tracking=True)
@@ -74,6 +78,7 @@ class Carpooling(models.Model):
     cost = fields.Monetary(string='Cost', currency_field='company_currency', compute='_compute_cost', tracking=True)
     brand = fields.Char(string='Brand', related='car_id.brand', tracking=True)
     seats = fields.Integer(string='Seats', related='car_id.seats', tracking=True)
+    sequence = fields.Integer(string='Sequence')
     
     @api.onchange('car_id')
     def _onchange_car_id(self):
