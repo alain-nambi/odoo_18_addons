@@ -3,3 +3,4 @@ carpooling.access_carpooling_carpooling,access_carpooling_carpooling,model_carpo
 carpooling.access_carpooling_car,access_carpooling_car,model_carpooling_car,base.group_user,1,1,1,1
 carpooling.access_carpooling_tag,access_carpooling_tag,model_carpooling_tag,base.group_user,1,1,1,1
 carpooling.access_carpooling_wizard,access_carpooling_wizard,model_carpooling_wizard,base.group_user,1,1,1,1
+carpooling.access_carpooling_abstract_model,access_carpooling_abstract_model,model_carpooling_abstract_model,base.group_user,1,1,1,1

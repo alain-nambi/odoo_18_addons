@@ -3,6 +3,18 @@
 from odoo import models, fields, api
 import logging
 from odoo.exceptions import ValidationError
+import datetime
+
+class CarpoolingAbstractModel(models.AbstractModel):
+    _name = 'carpooling.abstract.model'
+    _description = 'Carpooling Abstract Model'
+    
+    @api.onchange('name')
+    def _onchange_name(self):
+        current_date_year = f"{datetime.datetime.now().year}"
+        if self.name:
+            if current_date_year not in self.name:
+                self.name = f"{self.name} {current_date_year}"
 
 class Carpooling(models.Model):
     """
@@ -31,7 +43,7 @@ class Carpooling(models.Model):
     """
     _name = 'carpooling.carpooling'
     _description = """Helps you to find a carpooling partner"""
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'carpooling.abstract.model']
     
     name = fields.Char(string='Name')
     taken_seats = fields.Integer(string='Taken Seats', tracking=True)
