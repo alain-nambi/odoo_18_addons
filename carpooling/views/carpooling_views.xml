@@ -45,6 +45,23 @@
         </field>
     </record> 
 
+    <!-- SEARCH VIEW | Carpooling search view definition -->
+    <record id="carpooling_view_search" model="ir.ui.view">
+        <field name="name">carpooling.carpooling.view.search</field> <!-- View name -->
+        <field name="model">carpooling.carpooling</field> <!-- Associated model -->
+        <field name="arch" type="xml">
+            <search string="Search Carpooling"> <!-- Search view definition -->
+                <field name="car_id" />
+                <field name="name" /> <!-- Carpool name -->
+                <field name="taken_seats" /> <!-- Number of taken seats -->
+                <field name="departure_city" /> <!-- Departure city -->
+                <field name="destination_city" /> <!-- Destination city -->
+                <field name="state" /> <!-- State -->
+                <field name="brand" /> <!-- Brand -->
+            </search>
+        </field>
+    </record>
+
     <!-- TREE VIEW | Carpooling tree view definition -->
     <!-- In Odoo 18, the <tree> tag has been replaced by <list> tag -->
     <record id="carpooling_view_tree" model="ir.ui.view">
