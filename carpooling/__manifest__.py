@@ -16,5 +16,6 @@
         'views/carpooling_menus.xml',
         'wizard/carpooling_wizard_views.xml',
         'security/ir.model.access.csv',
+        'data/ir_cron.xml',
     ]
 }

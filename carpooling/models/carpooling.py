@@ -42,7 +42,7 @@ class Carpooling(models.Model):
         brand (Char): The brand of the car used for the carpooling trip.
     """
     _name = 'carpooling.carpooling'
-    _description = """Helps you to find a carpooling partner"""
+    _description = """Carpooling Model"""
     _inherit = ['mail.thread', 'mail.activity.mixin', 'carpooling.abstract.model']
     
     # This sets the default ordering for records: first by 'sequence' in ascending order, then by 'id' in descending order.
@@ -145,3 +145,10 @@ class Carpooling(models.Model):
         for record in self:
             # logging.info("Company currency: %s", self.env.user.company_id.currency_id)
             record.company_currency = self.env.user.company_id.currency_id
+            
+    def _run_cron(self):
+        for carpool in self.search([]):
+            logging.info('Cron job running for carpooling: %s', carpool.name)
+            if carpool.departure_time > 12:
+                logging.info('Departure time is in the afternoon.')
+                carpool.amount_per_km += 25
