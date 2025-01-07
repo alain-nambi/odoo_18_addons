@@ -58,6 +58,14 @@
                 <field name="destination_city" /> <!-- Destination city -->
                 <field name="state" /> <!-- State -->
                 <field name="brand" /> <!-- Brand -->
+
+                <filter name="seats_ge_2" string="Car seats >= 2" 
+                        domain="[('seats', '>=', '2')]" />
+
+                <group name="group_by" string="Group By" expand="1">
+                    <filter name="group_by_car" string="Car" context="{'group_by': 'car_id'}" />
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}" />
+                </group>
             </search>
         </field>
     </record>
