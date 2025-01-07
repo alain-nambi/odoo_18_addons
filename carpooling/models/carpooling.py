@@ -79,6 +79,8 @@ class Carpooling(models.Model):
     brand = fields.Char(string='Brand', related='car_id.brand', tracking=True)
     seats = fields.Integer(string='Seats', related='car_id.seats', tracking=True)
     sequence = fields.Integer(string='Sequence')
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company)
+
     
     @api.onchange('car_id')
     def _onchange_car_id(self):

@@ -17,5 +17,6 @@
         'wizard/carpooling_wizard_views.xml',
         'security/ir.model.access.csv',
         'data/ir_cron.xml',
+        'report/car_report.xml'
     ]
 }

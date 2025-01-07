@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_carpooling_carpooling" model="ir.actions.report">
+        <field name="name">Print Car Travelling</field>
+        <field name="model">carpooling.carpooling</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">carpooling.report_template_carpooling_carpooling</field>
+        <field name="report_file">report.name</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="binding_model_id" ref="carpooling.model_carpooling_carpooling"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_template_carpooling_carpooling">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+                        <h1 style="text-align: center; color: #2c3e50;"><t t-esc="o.car_id.name"/></h1>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <thead>
+                                <tr style="background-color: #2c3e50; color: white;">
+                                    <th style="padding: 10px; text-align: left;">Field</th>
+                                    <th style="padding: 10px; text-align: left;">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;">Name</td>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;"><t t-esc="o.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;">Amount Per KM</td>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;"><t t-esc="o.amount_per_km"/> USD</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;">Cost</td>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;"><t t-esc="o.cost"/> USD</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;">Date</td>
+                                    <td style="padding: 10px; border: 1px solid #bdc3c7;"><t t-esc="o.departure_date"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr style="border: 1px solid #bdc3c7;"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
