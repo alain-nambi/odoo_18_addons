@@ -152,3 +152,12 @@ class Carpooling(models.Model):
             if carpool.departure_time > 12:
                 logging.info('Departure time is in the afternoon.')
                 carpool.amount_per_km += 25
+                
+    def _open_find_carpool_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Find Carpool Wizard',
+            'res_model': 'carpooling.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+        }
