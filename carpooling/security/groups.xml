@@ -1,0 +1,20 @@
+<!-- The eval value here is a list of tuples, where each tuple has two elements:
+
+First Element (4): Specifies the operation to perform on the relationship.
+
+4: Add a record to the relationship (in this case, add base.group_user to implied_ids).
+Other common operations:
+3: Remove a record from the relationship.
+6: Replace all existing records with new ones -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Define a new user group for Carpooling Managers -->
+    <record id="group_carpooling_manager" model="res.groups">
+        <!-- Name of the group -->
+        <field name="name">Carpooling Manager</field>
+        
+        <!-- Imply that this group includes the basic user group (base.group_user) -->
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+    </record>
+</odoo>

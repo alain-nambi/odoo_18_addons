@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="access_carpooling_manager" model="ir.model.access">
+        <field name="name">Carpooling Manager Access | Delete</field>
+        <field name="model_id" ref="model_carpooling_carpooling" />
+        <field name="group_id" ref="carpooling.group_carpooling_manager" />
+        <field name="perm_read" eval="1"/>  <!-- Allow Read -->
+        <field name="perm_write" eval="1"/> <!-- Allow Write -->
+        <field name="perm_create" eval="1"/> <!-- Allow Create -->
+        <field name="perm_unlink" eval="1"/> <!-- Deny Delete -->
+    </record>
+
+</odoo>
