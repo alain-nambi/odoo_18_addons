@@ -6,8 +6,30 @@
         <field name="inherit_id" ref="base.view_partner_form" /> <!-- ref : external_id -->
         <field name="arch" type="xml">
             <!-- Add the field above the website field -->
-            <xpath expr="//field[@name='website']" position="before">
+            <!-- <xpath expr="//field[@name='website']" position="before">
                 <field name="is_driver"/>
+            </xpath> -->
+
+            <!-- Replace specified field using position="replace" -->
+            <!-- <field name="category_id" position="replace"></field> -->
+
+            <!-- Make field not editable using position="attributes" and add attributes readolny -->
+            <!-- <field name="phone" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field> -->
+
+            <!-- Add placeholder using attribute -->
+            <!-- <field name="phone" position="attributes">
+                <attribute name="placeholder"> +261 33 11 805 62 </attribute>
+            </field> -->
+
+            <!-- Add field is_driver to inherited notebook view -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Carpooling">
+                    <group string="Driver">
+                        <field name="is_driver" />
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
