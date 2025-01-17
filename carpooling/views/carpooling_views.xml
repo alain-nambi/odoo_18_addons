@@ -85,9 +85,9 @@
                 <field name="taken_seats" width="100" /> <!-- Number of taken seats -->
                 <field name="departure_date" /> <!-- Departure date -->
                 <field name="state" /> <!-- State -->
-                <field name="company_currency" invisible="1" />
+                <field name="company_currency" invisible="1" optional="hide" on_change="1" />
                 <field name="cost" />
-                <field name="tag_ids" widget="many2many_tags" />
+                <field name="tag_ids" widget="many2many_tags" optional="hide" on_change="1" />
             </list>
         </field>
     </record>
