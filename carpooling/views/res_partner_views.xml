@@ -18,7 +18,7 @@
         <field name="inherit_id" ref="base.view_partner_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='email']" position="after">
-                <field name="is_driver"/>
+                <field name="is_driver" optional="hide" on_change="1" />
             </xpath>
         </field>
     </record>
