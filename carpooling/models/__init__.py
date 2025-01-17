@@ -1,1 +1,1 @@
-from . import carpooling, car, tag
+from . import carpooling, car, tag, res_partner

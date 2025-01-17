@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_view_form_driver" model="ir.ui.view">
+        <field name="name">res.partner.form.driver</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" /> <!-- ref : external_id -->
+        <field name="arch" type="xml">
+            <!-- Add the field above the website field -->
+            <xpath expr="//field[@name='website']" position="before">
+                <field name="is_driver"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_view_list_driver" model="ir.ui.view">
+        <field name="name">res.partner.view.driver</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="is_driver"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
