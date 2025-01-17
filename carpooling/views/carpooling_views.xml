@@ -7,19 +7,34 @@
         <field name="arch" type="xml">
             <form string="Carpooling"> <!-- Form title -->
                 <sheet>
-                    <group> <!-- Group for main fields -->
-                        <field name="name" /> <!-- Carpool name -->
-                        <field name="taken_seats" /> <!-- Number of taken seats -->
-                        <field name="state" invisible="1" /> <!-- State -->
-                        <field name="company_currency" invisible="1" />
-                        <field name="amount_per_km" options="{'currency_field': 'company_currency'}" />
-                        <field name="km" />
-                        <field name="cost" />
-                        <field name="image" widget="image" />
-                        <field name="car_id" />
-                        <field name="tag_ids" widget="many2many_tags" />
-                        <field name="brand" />
+                    <group name="name" string="Car Details">
+                        <group>
+                            <field name="car_id" />
+                            <field name="tag_ids" widget="many2many_tags" />
+                            <field name="brand" />
+                        </group>
+
+                        <group>
+                            <field name="image" widget="image" string="" />
+                        </group>
                     </group>
+                    
+                    <group string="Carpool Details"> <!-- Group for main fields -->
+                        <group>
+                            <field name="name" /> <!-- Carpool name -->
+                            <field name="taken_seats" /> <!-- Number of taken seats -->
+                        </group>
+
+                        <field name="state" invisible="1" /> <!-- State -->
+
+                        <group>
+                            <field name="company_currency" invisible="1" />
+                            <field name="amount_per_km" options="{'currency_field': 'company_currency'}" />
+                            <field name="km" />
+                            <field name="cost" />
+                        </group>
+                    </group>
+
                     <notebook> <!-- Tabs for additional information -->
                         <page name="details" string="Details"> <!-- Details tab -->
                             <group>

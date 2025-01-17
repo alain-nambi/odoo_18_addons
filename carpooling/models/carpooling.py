@@ -71,7 +71,7 @@ class Carpooling(models.Model):
     )
     
     resume = fields.Html(string='Resume', tracking=True)
-    image = fields.Binary(string='Image', tracking=True)
+    image = fields.Binary(string='Image')
     car_id = fields.Many2one('carpooling.car', string='Car', tracking=True)
     tag_ids = fields.Many2many('carpooling.tag', string='Tags', tracking=True)
     km = fields.Float(string='KM', tracking=True)
