@@ -2,21 +2,35 @@
 <odoo>
 
     <template id="carpooling_index" name="Carpooling Index">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center">
-                    <h1 class="display-4">Hello, Odoo!</h1>
-                    <p class="lead">Welcome to my Odoo module.</p>
-                    <div class="card mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Dynamic Data</h5>
-                            <p class="card-text">Data</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
-                        </div>
+        <t t-call="web.frontend_layout">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <h1 class="display-4">Hello, Odoo!</h1>
+                        <p class="lead">Welcome to my Odoo module.</p>
+                        
+                        <t t-foreach="carpoolings" t-as="carpooling">
+                            <div class="card mt-4 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title" t-esc="carpooling.name"/>
+
+                                    <!-- Image Display -->
+                                    <img t-att-src="'/web/image/carpooling.carpooling/' + str(carpooling.id) + '/image'" 
+                                         class="card-img-top" 
+                                         alt="Carpooling Image" 
+                                         style="max-height: 200px; object-fit: cover;"/>
+
+                                    <p class="card-text">
+                                        <strong>Cost:</strong> <t t-esc="carpooling.cost"/> <t t-esc="carpooling.company_currency.display_name"/>
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Learn More</a>
+                                </div>
+                            </div>
+                        </t>
                     </div>
                 </div>
             </div>
-        </div>
+        </t>
     </template>
 
 </odoo>
