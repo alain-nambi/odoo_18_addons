@@ -9,9 +9,10 @@
                 <sheet>
                     <group name="name" string="Car Details">
                         <group>
-                            <field name="car_id" />
-                            <field name="tag_ids" widget="many2many_tags" />
-                            <field name="brand" />
+                            <field name="is_manager_user" invisible="1"/>
+                            <field name="car_id" readonly="not is_manager_user" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                            <field name="tag_ids" widget="many2many_tags" readonly="not is_manager_user"/>
+                            <field name="brand"/>
                         </group>
 
                         <group>
@@ -174,7 +175,7 @@
         <field name="name">Open Find Carpool Wizard</field>
         <field name="model_id" ref="model_carpooling_carpooling"/>
         <field name="binding_model_id" ref="model_carpooling_carpooling"/>
-        <field name="groups_id  " eval="[(4, ref('carpooling.group_carpooling_manager'))]" />
+        <field name="groups_id" eval="[(4, ref('carpooling.group_carpooling_manager'))]" />
         <field name="state">code</field>
         <field name="code">
             if records:

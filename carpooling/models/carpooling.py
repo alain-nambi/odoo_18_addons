@@ -80,7 +80,11 @@ class Carpooling(models.Model):
     seats = fields.Integer(string='Seats', related='car_id.seats', tracking=True)
     sequence = fields.Integer(string='Sequence')
     company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company)
+    is_manager_user = fields.Boolean(string='Is Manager User', compute="_compute_is_manager_user")
 
+    def _compute_is_manager_user(self):
+        for record in self:
+            record.is_manager_user = self.env.user.has_group('carpooling.group_carpooling_manager')
     
     @api.onchange('car_id')
     def _onchange_car_id(self):
