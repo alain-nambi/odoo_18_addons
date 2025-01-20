@@ -1,35 +1,35 @@
 # Odoo Installation and Development Steps Checklist
 
-- [ ] 1 ： Installation d'Odoo sur Linux [o-HE2QLhV-4].mp4
-- [ ] 2 ： Lancer Odoo pour la première fois [4OcA-hhD-CQ].mp4
-- [ ] 3 ： Création du premier module [rdot6_vsaOs].mp4
-- [ ] 4 ： Le Manifest [Yyj_8oBGMzI].mp4
-- [ ] 5 ： Model et champs [FXM6eQWzwqs].mp4
-- [ ] 6 ： Introduction aux vues, menus et à la sécurité [Xm0ZfqFWeXs].mp4
-- [ ] 7 ： Champs basiques [rX320CZNsZA].mp4
-- [ ] 8 ： Vues basiques [d4JTf2-1pc4].mp4
-- [ ] 9 ： Menus [2fLwXI1GVhk].mp4
-- [ ] 10 ： Actions [UjhOjpwvOgY].mp4
-- [ ] 11 ： Champs avancés [C_ZWx1gAAts].mp4
-- [ ] 12 ： Décorateurs [cgEGKkebQS8].mp4
-- [ ] 13 ： Fonctions des modèles - Filtered - Sorted - Mapped [dkLqHsYWHAk].mp4
-- [ ] 14 ： Wizard 1 ( python) [SEJ1aV-MkXo].mp4
-- [ ] 15 ： Wizard 2 ( vues) [cARrx45IMzk].mp4
-- [ ] 16 ： Vue form [hoVWnrRzfCU].mp4
-- [ ] 17 ： Chatter et activités [M2_DKBuxo3o].mp4
-- [ ] 18 ： Abstract model [mh-7mRyDQhQ].mp4
-- [ ] 19 ： Tree view [HJaHLHlfVjY].mp4
-- [ ] 20 ： Search View [TywA3-Wc5AE].mp4
-- [ ] 21： CRONS [jxvFZlHuNHU].mp4
-- [ ] 22 ： Server Actions [OFu7UPjXn88].mp4
-- [ ] 23 ： Introduction aux rapports [dMLActwi2oc].mp4
-- [ ] 24 ： Créer une action ＂report＂ [lRZqE2cffbk].mp4
-- [ ] 25 ： Créer un rapport PDF [2SNEeqN8k48].mp4
-- [ ] 26 ： Développer un rapport ZPL [oaqfu0nOq0A].mp4
-- [ ] 27 ： Les layouts et les formats de papier [3kI-oHXBXrQ].mp4
-- [ ] 28 ： Création d'un groupe d'accès. [2-kymkHgrlw].mp4
-- [ ] 29 ： Redefinition d'un champ existant. [kVVcuY37A0E].mp4
-- [ ] 30 ： Héritage de vue. [eCIHj-rytdk].mp4
+- [x] 1 ： Installation d'Odoo sur Linux [o-HE2QLhV-4].mp4
+- [x] 2 ： Lancer Odoo pour la première fois [4OcA-hhD-CQ].mp4
+- [x] 3 ： Création du premier module [rdot6_vsaOs].mp4
+- [x] 4 ： Le Manifest [Yyj_8oBGMzI].mp4
+- [x] 5 ： Model et champs [FXM6eQWzwqs].mp4
+- [x] 6 ： Introduction aux vues, menus et à la sécurité [Xm0ZfqFWeXs].mp4
+- [x] 7 ： Champs basiques [rX320CZNsZA].mp4
+- [x] 8 ： Vues basiques [d4JTf2-1pc4].mp4
+- [x] 9 ： Menus [2fLwXI1GVhk].mp4
+- [x] 10 ： Actions [UjhOjpwvOgY].mp4
+- [x] 11 ： Champs avancés [C_ZWx1gAAts].mp4
+- [x] 12 ： Décorateurs [cgEGKkebQS8].mp4
+- [x] 13 ： Fonctions des modèles - Filtered - Sorted - Mapped [dkLqHsYWHAk].mp4
+- [x] 14 ： Wizard 1 ( python) [SEJ1aV-MkXo].mp4
+- [x] 15 ： Wizard 2 ( vues) [cARrx45IMzk].mp4
+- [x] 16 ： Vue form [hoVWnrRzfCU].mp4
+- [x] 17 ： Chatter et activités [M2_DKBuxo3o].mp4
+- [x] 18 ： Abstract model [mh-7mRyDQhQ].mp4
+- [x] 19 ： Tree view [HJaHLHlfVjY].mp4
+- [x] 20 ： Search View [TywA3-Wc5AE].mp4
+- [x] 21： CRONS [jxvFZlHuNHU].mp4
+- [x] 22 ： Server Actions [OFu7UPjXn88].mp4
+- [x] 23 ： Introduction aux rapports [dMLActwi2oc].mp4
+- [x] 24 ： Créer une action ＂report＂ [lRZqE2cffbk].mp4
+- [x] 25 ： Créer un rapport PDF [2SNEeqN8k48].mp4
+- [x] 26 ： Développer un rapport ZPL [oaqfu0nOq0A].mp4
+- [x] 27 ： Les layouts et les formats de papier [3kI-oHXBXrQ].mp4
+- [x] 28 ： Création d'un groupe d'accès. [2-kymkHgrlw].mp4
+- [x] 29 ： Redefinition d'un champ existant. [kVVcuY37A0E].mp4
+- [x] 30 ： Héritage de vue. [eCIHj-rytdk].mp4
 - [x] 31 ： Modification d'un compute existant. [FvyeN2fp404].mp4
 - [x] 32 ： Héritage de model [V4QaJ8WfMVU].mp4
 - [x] 33 ： Créer un controller [u7vR9J-IOAQ].mp4
