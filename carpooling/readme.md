@@ -34,9 +34,9 @@
 - [x] 32 ： Héritage de model [V4QaJ8WfMVU].mp4
 - [x] 33 ： Créer un controller [u7vR9J-IOAQ].mp4
 - [x] 34 ： Ajouter le layout Odoo et des données dans notre vue [amBYwtVdWC0].mp4
-- [ ] 35 ： Modifier le comportement d'un rapport avec un modèle abstrait [0Tsxa64XJqs].mp4
-- [ ] 36 ： Gestion des accès des modèles [EKaz6mRzGpg].mp4
-- [ ] 37 ： Ajout de groupes spécifiques dans les éléments des vues [KnQVvs80u1o].mp4
+- [x] 35 ： Modifier le comportement d'un rapport avec un modèle abstrait [0Tsxa64XJqs].mp4
+- [x] 36 ： Gestion des accès des modèles [EKaz6mRzGpg].mp4
+- [x] 37 ： Ajout de groupes spécifiques dans les éléments des vues [KnQVvs80u1o].mp4
 - [ ] 38 ：Groupes et utilisateurs ：Un utilisateur fait partie d'un groupe？ [Vyrq4O6oRsg].mp4
 - [ ] 39 ： Règles sur enregistrements [XJjbb2E0NUM].mp4
 - [ ] 40 ： Vue Calendrier [zDM33pYVgXE].mp4
