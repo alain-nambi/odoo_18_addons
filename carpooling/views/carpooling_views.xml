@@ -159,7 +159,7 @@
 
     <!-- Action to open carpooling records -->
     <record id="carpool_action" model="ir.actions.act_window"> 
-        <field name="name">Find Carpool</field> <!-- Action name -->
+        <field name="name">Carpooling Action</field> <!-- Action name -->
         <field name="res_model">carpooling.carpooling</field> <!-- Target model -->
         <field name="view_mode">list,form,kanban</field> <!-- Available views, use : tree, form, kanban -->
         <field name="context"> {'search_default_seats_ge_2': 1} </field>

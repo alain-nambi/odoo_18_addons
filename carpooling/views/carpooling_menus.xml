@@ -23,6 +23,7 @@
         parent="carpooling_menu"
         action="find_carpool_action"
         sequence="10"
+        groups="carpooling.group_carpooling_manager"
     />
 
     <!-- MENU: Carpool Request -->
