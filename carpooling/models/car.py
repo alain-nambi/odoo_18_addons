@@ -16,3 +16,18 @@ class Car(models.Model):
     carpooling_ids = fields.One2many('carpooling.carpooling', 'car_id', string='Carpooling Trips')
     brand = fields.Char(string='Brand')
     seats = fields.Integer(string='Seats')
+    
+
+class Bike(models.Model):
+    """
+    Bike Model
+    """
+    _name = 'carpooling.bike'
+    _description = """Represents a bike that can be used for carpooling"""
+    _inherit = ['carpooling.car']
+    
+    bike_type = fields.Selection([
+        ('sport', 'Sport'),
+        ('city', 'City'),
+        ('offroad', 'Offroad')
+    ])
