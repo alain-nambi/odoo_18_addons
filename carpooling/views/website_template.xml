@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="carpooling_index" name="Carpooling Index">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h1 class="display-4">Hello, Odoo!</h1>
+                    <p class="lead">Welcome to my Odoo module.</p>
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Dynamic Data</h5>
+                            <p class="card-text">Data</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+</odoo>

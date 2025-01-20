@@ -15,6 +15,7 @@
         'views/carpooling_views.xml',
         'views/carpooling_menus.xml',
         'views/res_partner_views.xml',
+        'views/website_template.xml',
         'wizard/carpooling_wizard_views.xml',
         'security/ir.model.access.csv',
         'security/groups.xml',

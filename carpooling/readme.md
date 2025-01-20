@@ -31,7 +31,7 @@
 - [ ] 29 ： Redefinition d'un champ existant. [kVVcuY37A0E].mp4
 - [ ] 30 ： Héritage de vue. [eCIHj-rytdk].mp4
 - [x] 31 ： Modification d'un compute existant. [FvyeN2fp404].mp4
-- [ ] 32 ： Héritage de model [V4QaJ8WfMVU].mp4
+- [x] 32 ： Héritage de model [V4QaJ8WfMVU].mp4
 - [ ] 33 ： Créer un controller [u7vR9J-IOAQ].mp4
 - [ ] 34 ： Ajouter le layout Odoo et des données dans notre vue [amBYwtVdWC0].mp4
 - [ ] 35 ： Modifier le comportement d'un rapport avec un modèle abstrait [0Tsxa64XJqs].mp4
