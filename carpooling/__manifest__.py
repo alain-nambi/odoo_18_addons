@@ -18,6 +18,7 @@
         'views/website_template.xml',
         'wizard/carpooling_wizard_views.xml',
         'security/ir.model.access.csv',
+        'security/ir.rule.xml',
         'security/groups.xml',
         'security/access_carpooling_manager.xml',
         'data/ir_cron.xml',

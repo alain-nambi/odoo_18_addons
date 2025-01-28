@@ -37,8 +37,8 @@
 - [x] 35 ： Modifier le comportement d'un rapport avec un modèle abstrait [0Tsxa64XJqs].mp4
 - [x] 36 ： Gestion des accès des modèles [EKaz6mRzGpg].mp4
 - [x] 37 ： Ajout de groupes spécifiques dans les éléments des vues [KnQVvs80u1o].mp4
-- [ ] 38 ：Groupes et utilisateurs ：Un utilisateur fait partie d'un groupe？ [Vyrq4O6oRsg].mp4
-- [ ] 39 ： Règles sur enregistrements [XJjbb2E0NUM].mp4
+- [x] 38 ：Groupes et utilisateurs ：Un utilisateur fait partie d'un groupe？ [Vyrq4O6oRsg].mp4
+- [x] 39 ： Règles sur enregistrements [XJjbb2E0NUM].mp4
 - [ ] 40 ： Vue Calendrier [zDM33pYVgXE].mp4
 - [ ] 41 ： Cacher des lignes sur les devis et factures ： première partie [CYiy8vvFwFQ].mp4
 - [ ] 42 ： Cacher des lignes sur les devis et factures ： deuxième partie [3P9Pu4KQ76c].mp4

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Règle 1 : Restreindre les utilisateurs non managers -->
+    <record id="rule_user_km_limit" model="ir.rule">
+        <field name="name">Restrict Long Trips Modification for Non-Managers</field>
+        <field name="model_id" ref="carpooling.model_carpooling_carpooling"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/> <!-- Groupe utilisateur standard -->
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+        <field name="domain_force">[('km', '&lt;=', 500)]</field> <!-- Pas de modification si km > 500 -->
+    </record>
+
+    <!-- Règle 2 : Accès complet pour les managers -->
+    <record id="rule_manager_access" model="ir.rule">
+        <field name="name">Full Access for Managers</field>
+        <field name="model_id" ref="carpooling.model_carpooling_carpooling"/>
+        <field name="groups" eval="[(4, ref('carpooling.group_carpooling_manager'))]"/> <!-- Groupe des managers -->
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+        <field name="domain_force">[]</field> <!-- Pas de restriction pour les managers -->
+    </record>
+
+</odoo>
