@@ -10,8 +10,18 @@
                     <group name="name" string="Car Details">
                         <group>
                             <field name="is_manager_user" invisible="1"/>
-                            <field name="car_id" readonly="not is_manager_user" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
-                            <field name="tag_ids" widget="many2many_tags" readonly="not is_manager_user"/>
+                            <!-- Field for non-manager users -->
+                            <!-- This field is visible only when the user is NOT a manager. -->
+                            <field name="car_id" 
+                                   invisible="is_manager_user" 
+                                   options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True}"/>
+
+                            <!-- Field for manager users -->
+                            <!-- This field is visible only when the user IS a manager. -->
+                            <field name="car_id" 
+                                   invisible="not is_manager_user"/>
+
+                            <field name="tag_ids" widget="many2many_tags"/>
                             <field name="brand"/>
                         </group>
 

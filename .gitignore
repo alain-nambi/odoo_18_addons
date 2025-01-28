@@ -1,0 +1,49 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Odoo logs
+*.log
+
+# Odoo database file (may be large)
+*.db
+
+# Odoo instance config
+*.conf
+
+# Odoo specific temp files
+*.pid
+*.sock
+
+# Odoo assets (such as JS, CSS minified files)
+*.min.js
+*.min.css
+*.sass-cache/
+
+# Odoo's XML import/export files
+*.xml~
+*.bak
+
+# Temporary or backup files from text editors
+*~
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+yarn.lock
+package-lock.json
+
+# .env or environment variables files
+.env
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# Odoo custom addons directory (in case you have one and don't want it to be tracked)
+addons/
