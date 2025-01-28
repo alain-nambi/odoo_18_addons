@@ -53,6 +53,11 @@ class Carpooling(models.Model):
     taken_seats = fields.Integer(string='Taken Seats', tracking=True)
     departure_time = fields.Float(string='Departure Time', tracking=True)
     departure_date = fields.Date(string='Departure Date', tracking=True)
+    
+    # Use in calendar view
+    departure_datetime = fields.Datetime(string='Departure Datetime', tracking=True)
+    arrival_datetime = fields.Datetime(string='Arrival Datetime', tracking=True)
+    
     departure_city = fields.Char(string='Departure City', tracking=True)
     destination_city = fields.Char(string='Destination City', tracking=True)
     note = fields.Text(string='Note', tracking=True)
